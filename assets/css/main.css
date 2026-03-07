@@ -1,0 +1,53 @@
+/* Slider Wrapper Fix */
+.certification-slider-wrapper {
+  overflow: visible !important; /* Allows arrows to sit outside slightly */
+}
+
+/* Premium Navigation Buttons */
+.certification-slider-wrapper .premium-nav {
+  width: 48px !important;
+  height: 48px !important;
+  background-color: #ffffff !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  border: 1px solid #f1f3f4 !important;
+  color: #3c4043 !important;
+  top: 45% !important;
+  transition: all 0.3s ease;
+}
+
+.certification-slider-wrapper .premium-nav:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15) !important;
+  background-color: #f8f9fa !important;
+}
+
+.certification-slider-wrapper .premium-nav:after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+.certification-slider-wrapper .swiper-button-prev { left: -10px !important; }
+.certification-slider-wrapper .swiper-button-next { right: -10px !important; }
+
+/* Pagination Dots */
+.certification-slider-wrapper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #bdc1c6 !important;
+  opacity: 1;
+  margin: 0 6px !important;
+}
+
+.certification-slider-wrapper .swiper-pagination-bullet-active {
+  background: #202124 !important;
+  transform: scale(1.2);
+}
+
+/* Prevent Vertical Stacking */
+.swiper-wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+
+

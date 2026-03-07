@@ -1,0 +1,905 @@
+/* Variables & Theme */
+:root {
+  --g-blue: #4285F4;
+  --g-red: #EA4335;
+  --g-yellow: #FBBC05;
+  --g-green: #34A853;
+  --g-gray: #5F6368;
+  --font-main: 'Google Sans', 'Roboto', sans-serif;
+}
+
+body { font-family: var(--font-main); color: #3C4043; scroll-behavior: smooth; }
+
+/* Header */
+.header { background: rgba(255, 255, 255, 0.95); height: 80px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.sitename { font-family: 'Google Sans'; color: #5F6368; font-weight: 700; }
+.sitename span { color: var(--g-blue); }
+
+.google-dots .dot { height: 8px; width: 8px; display: inline-block; border-radius: 50%; margin: 0 2px; }
+.dot.blue { background: var(--g-blue); }
+.dot.red { background: var(--g-red); }
+.dot.yellow { background: var(--g-yellow); }
+.dot.green { background: var(--g-green); }
+
+/* Navigation */
+.navmenu a { color: var(--g-gray); font-weight: 500; padding: 10px 15px; text-decoration: none; transition: 0.3s; }
+.navmenu a:hover, .navmenu a.active { color: var(--g-blue); }
+.btn-get-started { background: var(--g-blue); border-radius: 50px; padding: 10px 25px !important; margin-left: 15px; color: white !important; }
+
+
+
+/* Section Title & Badges */
+.badge-google { padding: 8px 20px; border-radius: 50px; font-weight: 500; font-size: 14px; display: inline-block; margin-bottom: 15px; }
+.badge-google.blue { background: #E8F0FE; color: var(--g-blue); }
+.badge-google.red { background: #FCE8E6; color: var(--g-red); }
+.badge-google.yellow { background: #FFF7E0; color: var(--g-yellow); }
+.badge-google.green { background: #E6F4EA; color: var(--g-green); }
+
+/* Hero Gradient */
+.google-text-gradient {
+  background: linear-gradient(45deg, var(--g-blue), var(--g-red), var(--g-yellow), var(--g-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Service Boxes */
+.service-box { padding: 40px; border-radius: 24px; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; height: 100%; border-bottom: 5px solid transparent; }
+.service-box:hover { transform: translateY(-10px); }
+.service-box i { font-size: 40px; margin-bottom: 20px; display: block; }
+.border-blue { border-color: var(--g-blue); }
+.border-red { border-color: var(--g-red); }
+.border-yellow { border-color: var(--g-yellow); }
+
+/* Portfolio & Certs */
+.portfolio-card, .cert-item img { border-radius: 20px; overflow: hidden; border: none; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+.portfolio-card:hover { transform: scale(1.03); }
+
+/* FAQ Accordion */
+.accordion-button:not(.collapsed) { background-color: #E8F0FE; color: var(--g-blue); }
+.accordion-button:focus { box-shadow: none; border-color: rgba(0,0,0,.125); }
+
+/* Buttons & Hovers */
+.btn-google-blue { background: var(--g-blue); color: white; border-radius: 12px; padding: 12px 30px; border: none; font-weight: 500; transition: 0.3s; }
+.btn-outline-google { border: 1px solid #DADCE0; border-radius: 12px; padding: 12px 30px; color: var(--g-gray); font-weight: 500; transition: 0.3s; }
+.btn-outline-google:hover { background: #f8f9fa; border-color: var(--g-blue); color: var(--g-blue); }
+
+/* New: Hover effect for primary outlined buttons */
+.btn-outline-primary {
+  border: 1px solid var(--g-blue);
+  color: var(--g-blue);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--g-blue) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.24) !important;
+}
+
+/* Scrollbar Utility (Google Style Slider) */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Forms */
+.form-control:focus { border-color: var(--g-blue); box-shadow: 0 0 0 0.25rem rgba(66, 133, 244, 0.1); }
+
+
+/* Container for arrows to sit outside the cards */
+  .cert-swiper-wrapper {
+    position: relative;
+    padding: 0 20px; 
+  }
+
+  /* Premium Arrow Styling */
+  .google-nav-btn {
+    width: 44px !important;
+    height: 44px !important;
+    background: white !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    color: #5F6368 !important;
+    border: 1px solid #ebebeb !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .google-nav-btn:after { display: none !important; } /* Hide Swiper default arrows */
+
+  .swiper-button-prev.google-nav-btn { left: 0 !important; }
+  .swiper-button-next.google-nav-btn { right: 0 !important; }
+
+  /* Premium Pagination Dots */
+  .swiper-pagination { bottom: 0 !important; }
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #bdc1c6 !important;
+    opacity: 1;
+    margin: 0 6px !important;
+  }
+  .swiper-pagination-bullet-active {
+    background: #4285F4 !important;
+    width: 20px !important;
+    border-radius: 10px !important;
+    transition: width 0.3s ease;
+  }
+
+  /* Hero Section Enhancements */
+.hero {
+  background: radial-gradient(circle at 90% 10%, rgba(66, 133, 244, 0.05) 0%, rgba(255, 255, 255, 0) 50%);
+  overflow: hidden;
+}
+
+.premium-badge {
+  background: #f1f3f4;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--g-gray);
+  border: 1px solid #e8eaed;
+}
+
+.premium-badge .dot {
+  height: 8px;
+  width: 8px;
+  background: var(--g-green);
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: 0 0 0 3px rgba(52, 168, 83, 0.2);
+  animation: pulse 2s infinite;
+}
+
+/* Profile Image Styling */
+.hero-image-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+}
+
+.hero-profile-img {
+  width: 420px;
+  height: 420px;
+  object-fit: cover;
+  border: 8px solid white;
+}
+
+.shadow-premium {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Floating Decorative Card */
+.floating-card {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  background: white;
+  padding: 15px 25px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Buttons */
+.btn-google-primary {
+  background-color: var(--g-blue);
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-google-primary:hover {
+  background-color: #1a73e8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+  color: white;
+}
+
+.btn-outline-google {
+  border: 1px solid #dadce0;
+  color: #3c4043;
+  font-weight: 500;
+}
+
+.btn-outline-google:hover {
+  background: #f8f9fa;
+  border-color: #bdc1c6;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Mobile Specific Optimizations */
+@media (max-width: 767px) {
+  .hero {
+    min-height: 100vh; /* Ensures it fills the screen */
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Force Perfect Round Image */
+  .hero-profile-img {
+    width: 300px !important; /* Fixed size for mobile */
+    height: 300px !important; /* Fixed size for mobile */
+    object-fit: cover;
+    border-radius: 50% !important; /* Force circle */
+    margin: 0 auto;
+  }
+
+  /* Reduce Text Sizes to fit screen */
+  .hero h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.2;
+  }
+
+  .hero .lead {
+    font-size: 0.95rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Decorative Floating Card - Adjust for mobile */
+  .floating-card {
+    padding: 8px 15px !important;
+    bottom: 5% !important;
+    right: 15% !important;
+  }
+  
+  /* Shrink the wrapper to prevent overflow */
+  .hero-image-wrapper {
+    padding: 10px !important;
+    margin-bottom: 20px;
+  }
+}
+
+/* Fix for uniform card sizes */
+.swiper-slide {
+  height: auto !important; /* Allows slides to equalize height */
+  display: flex;
+}
+
+.testimonial-item {
+  background: #ffffff;
+  border: 1px solid #dadce0 !important; /* Google Standard Border */
+  flex: 1; /* Forces card to fill the slide height */
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.testimonial-item:hover {
+  border-color: #4285f4 !important;
+  box-shadow: 0 4px 12px rgba(60,64,67,0.1);
+}
+
+.testimonial-text {
+  flex-grow: 1; /* Pushes the footer to the bottom */
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #3c4043;
+}
+
+.stars-wrapper i {
+  font-size: 0.9rem;
+  margin-right: 2px;
+}
+
+
+/* Material Design 3 Service Cards */
+.m3-service-card {
+  background: #ffffff;
+  border: 1px solid #dadce0; /* M3 Outline color */
+  border-radius: 28px; /* M3 Extra Large shape */
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.m3-service-card:hover {
+  background-color: #f8f9fa;
+  border-color: #bdc1c6;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+  transform: translateY(-4px);
+}
+
+.icon-shape {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px; /* M3 Medium shape */
+  font-size: 1.5rem;
+}
+
+/* Color Accents using variables from style.css */
+.bg-blue-subtle { background-color: rgba(66, 133, 244, 0.1); }
+.bg-red-subtle { background-color: rgba(234, 67, 53, 0.1); }
+.bg-yellow-subtle { background-color: rgba(251, 188, 5, 0.1); }
+
+.m3-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #f1f3f4;
+  color: #3c4043;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.card-footer-action {
+  border-top: 1px solid #f1f3f4;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 767px) {
+  .m3-service-card {
+    border-radius: 20px;
+  }
+  .display-5 {
+    font-size: 2rem !important;
+  }
+}
+
+
+/* Material Design 3 FAQ Styling */
+.m3-faq-item {
+  border: 1px solid #dadce0 !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.m3-faq-item:hover {
+  border-color: var(--g-blue) !important;
+  background-color: #f8f9fa;
+}
+
+.accordion-button {
+  padding: 20px 25px;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  font-size: 1.1rem;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--g-blue) !important;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.accordion-body {
+  padding: 20px 25px;
+  line-height: 1.6;
+}
+
+/* Mobile height reduction for FAQ */
+@media (max-width: 767px) {
+  #faq { padding-top: 2rem !important; }
+  .accordion-button { font-size: 1rem !important; padding: 15px 20px; }
+}
+
+
+/* Contact Section Enhancements */
+.contact-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  background: #f8f9fa;
+  border-radius: 20px;
+  border: 1px solid #e8eaed;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  background: #ffffff;
+  border-color: var(--g-blue);
+  box-shadow: 0 10px 20px rgba(60, 64, 67, 0.08);
+  transform: translateX(10px);
+}
+
+.icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.bg-blue-subtle { background: #E8F0FE; }
+.bg-red-subtle { background: #FCE8E6; }
+.bg-green-subtle { background: #E6F4EA; }
+
+.contact-form-card {
+  background: #ffffff;
+  border: 1px solid #dadce0 !important;
+}
+
+/* Aligning with your existing form-control:focus */
+.contact-form-card .form-control {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #dadce0;
+  background-color: #f8f9fa;
+}
+
+.contact-form-card .form-control:focus {
+  background-color: #ffffff;
+}
+
+/* Mobile height reduction for Contact */
+@media (max-width: 767px) {
+  #contact { padding-top: 2rem !important; }
+  .info-card { padding: 15px; }
+  .contact-form-card { padding: 25px !important; }
+}
+
+
+.google-marquee-wrapper {
+  padding: 40px 0;
+  overflow: hidden;
+  position: relative;
+  background: white;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: scroll-infinite 30s linear infinite;
+}
+
+.google-marquee-wrapper:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding-right: 80px;
+  min-width: 1000px;
+}
+
+.client-logo {
+  height: 75px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@keyframes scroll-infinite {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Fade edges */
+.marquee-fade-left,
+.marquee-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-fade-left {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.marquee-fade-right {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+/* --- Navigation Reset --- */
+.navmenu ul { display: flex; align-items: center; gap: 30px; list-style: none; margin: 0; padding: 0; }
+.btn-google-blue { background: #4285F4; color: #fff !important; padding: 8px 25px; border-radius: 50px; font-weight: 500; }
+
+/* --- Mobile Drawer (Right Side) --- */
+@media (max-width: 1199px) {
+  .navmenu .nav-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden */
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    display: flex !important;
+    flex-direction: column;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.05);
+  }
+
+  .mobile-nav-active .nav-drawer { right: 0; }
+
+  /* 1. Full Width Menu Items */
+  .navmenu ul {
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 0;
+    width: 100%;
+  }
+
+  .navmenu ul li { width: 100%; }
+
+  .navmenu ul li a {
+    padding: 15px 25px;
+    width: 100%;
+    display: block;
+    color: #5F6368;
+    font-size: 16px;
+    border-radius: 0; /* Full width edge-to-edge hover */
+    transition: 0.2s;
+  }
+
+  .navmenu ul li a.active, .navmenu ul li a:hover {
+    background: #f1f3f4;
+    color: #1a73e8 !important;
+    border-left: 4px solid #4285F4; /* Premium Google indicator */
+  }
+
+  .mobile-nav-toggle { font-size: 32px; cursor: pointer; color: #5F6368; }
+}
+
+
+/* --- Background Overlay (Dimmer) --- */
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* This darkens the back page */
+  z-index: 9990; /* Sit below the menu */
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+/* --- Mobile Nav Drawer (Bright) --- */
+@media (max-width: 1199px) {
+  .nav-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: #ffffff !important; /* Force solid white */
+    z-index: 9999 !important; /* Force it above the overlay */
+    display: flex !important;
+    flex-direction: column;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+  }
+
+  /* Show overlay ONLY when active */
+  .mobile-nav-active .mobile-nav-overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+
+/* Filter Buttons */
+.btn-google-filter {
+  border: 1px solid #dadce0;
+  background: white;
+  color: #5f6368;
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-google-filter:hover, .btn-google-filter.active {
+  background-color: #E8F0FE;
+  color: #4285F4;
+  border-color: #4285F4;
+}
+
+.btn-verify {
+  border: 1px solid #dadce0;
+  font-weight: 500;
+  background: transparent;
+  transition: background 0.3s;
+}
+
+.btn-verify:hover {
+  background-color: #f8f9fa;
+}
+
+/* Card Hover Animation */
+.cert-item {
+  transition: all 0.4s ease;
+}
+
+.cert-item.hide {
+  display: none;
+}
+
+
+/* Portfolio Card Specialization */
+.portfolio-card {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid #f1f3f4;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1) !important;
+}
+
+.portfolio-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+}
+
+.portfolio-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.portfolio-card:hover .portfolio-img-wrapper img {
+  transform: scale(1.1);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(66, 133, 244, 0.85); /* Google Blue Overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* Filter Buttons (Google standard) */
+.btn-google-filter {
+  border: 1px solid #dadce0;
+  background: white;
+  color: #5f6368;
+  border-radius: 50px;
+  padding: 8px 24px;
+  font-weight: 500;
+}
+
+.btn-google-filter.active, .btn-google-filter:hover {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  border-color: #4285F4;
+}
+
+
+/* Ensure Card image is straight at the bottom and rounded at the top */
+.cert-item .card-img-top {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: calc(1rem - 1px); /* Matches rounded-4 */
+  border-top-right-radius: calc(1rem - 1px);
+}
+
+/* Category Filter Buttons */
+.btn-google-filter {
+  border: 1px solid #dadce0;
+  background: white;
+  color: #5f6368;
+  border-radius: 50px;
+  padding: 8px 24px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-google-filter.active, .btn-google-filter:hover {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  border-color: #4285F4;
+}
+
+.cert-item {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
+/* Maintain Brand Colors on Hover - Preventing White-out */
+.btn-google-blue:hover, 
+.btn-google-blue:focus, 
+.btn-google-blue:active {
+  background-color: #1a73e8 !important; /* Deeper Google Blue */
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(66, 133, 244, 0.4);
+}
+
+/* Ensure Portfolio Filter buttons don't turn white either */
+.btn-google-filter:hover {
+  background-color: #f1f3f4 !important;
+  color: #202124 !important;
+  border-color: #dadce0 !important;
+}
+
+.btn-google-filter.active:hover {
+  background-color: #E8F0FE !important;
+  color: #4285F4 !important;
+}
+
+/* Google Brand Colorful Badges */
+.badge-google-blue {
+  background-color: #E8F0FE;
+  color: #1967D2;
+  border: 1px solid #D2E3FC;
+}
+
+.badge-google-red {
+  background-color: #FCE8E6;
+  color: #C5221F;
+  border: 1px solid #FAD2CF;
+}
+
+.badge-google-yellow {
+  background-color: #FEF7E0;
+  color: #EA8600;
+  border: 1px solid #FEEFC3;
+}
+
+.badge-google-green {
+  background-color: #E6F4EA;
+  color: #137333;
+  border: 1px solid #CEEAD6;
+}
+
+/* Base style for all rounded pills */
+.badge-premium {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+}
+
+
+/* Stable Certification Cards (No Bounce) */
+.cert-static-card {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 1px solid transparent !important;
+}
+
+.cert-static-card:hover {
+  /* No translateY here to prevent bouncing */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+  border-color: #dadce0 !important;
+}
+
+.badge-inst {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+}
+
+/* Institutional Subtle Backgrounds */
+.bg-blue-subtle { background-color: #E8F0FE; }
+.bg-red-subtle { background-color: #FCE8E6; }
+.bg-green-subtle { background-color: #E6F4EA; }
+.bg-yellow-subtle { background-color: #FEF7E0; }
+
+/* Swiper Dots Customization */
+.swiper-pagination-bullet-active {
+  background: #4285F4 !important;
+}
+
+/* Prevent jumping/movement during filtering */
+.cert-static-card {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: box-shadow 0.3s ease; /* No transform/bounce here */
+}
+
+/* Ensure Titles take same space */
+.cert-static-card h5 {
+  min-height: 3.5rem; 
+  margin-bottom: 0.5rem;
+}
+
+/* Ensure Paragraphs take same space */
+.cert-static-card p {
+  min-height: 4.5rem;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Badge Styling */
+.badge-inst {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+/* Background colors for badges */
+.bg-blue-subtle { background-color: #E8F0FE; }
+.bg-red-subtle { background-color: #FCE8E6; }
+.bg-green-subtle { background-color: #E6F4EA; }
+
+
+/* Maintenance Lock Screen */
+.maintenance-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+  backdrop-filter: blur(15px); /* Blurs the website behind it */
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 99999; /* Highest possible priority */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hard lock the body scroll */
+.maintenance-active {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+.maintenance-content {
+  border: 1px solid #dadce0;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 28px;
+}

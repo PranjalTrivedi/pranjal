@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Exclude utility pages from search results
+Disallow: /404.html
+Disallow: /maintenance.html
+Disallow: /coming-soon.html
+
+Sitemap: https://pranjaltrivedi.com/sitemap.xml
